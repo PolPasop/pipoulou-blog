@@ -10,6 +10,9 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
+const embedEverything = require("eleventy-plugin-embed-everything");
+
+
 module.exports = function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -78,6 +81,10 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+	});
+
+	eleventyConfig.addPlugin(embedEverything, {
+		add: ['soundcloud']
 	});
 
 	// Customize Markdown library settings:
