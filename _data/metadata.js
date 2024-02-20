@@ -1,8 +1,8 @@
 module.exports = {
-	title: "Eleventy Base Blog v8",
-	url: "https://example.com/",
-	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	title: "Le blog de Pipoulou",
+	url: "pipoulou-blog.netlify.app",
+	language: "fr",
+	description: "De tout et surtout de rien",
 	author: {
 		name: "Your Name Here",
 		email: "youremailaddress@example.com",
