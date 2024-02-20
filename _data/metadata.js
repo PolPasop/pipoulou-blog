@@ -1,5 +1,5 @@
 module.exports = {
-	title: "Le blog de Pipoulou",
+	title: "JoJo",
 	url: "pipoulou-blog.netlify.app",
 	language: "fr",
 	description: "De tout et surtout de rien",

@@ -1,8 +1,10 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family: "Noto Sans", sans-serif;
+	;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
+
 
 /* Theme colors */
 :root {
@@ -20,19 +22,46 @@
 	--syntax-tab-size: 2;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
 
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
-	}
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+	--step--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
+	--step--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
+	--step-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+	--step-1: clamp(1.35rem, 1.2761rem + 0.3696vi, 1.5625rem);
+	--step-2: clamp(1.62rem, 1.5041rem + 0.5793vi, 1.9531rem);
+	--step-3: clamp(1.944rem, 1.771rem + 0.8651vi, 2.4414rem);
+	--step-4: clamp(2.3328rem, 2.0827rem + 1.2504vi, 3.0518rem);
+	--step-5: clamp(2.7994rem, 2.4462rem + 1.7658vi, 3.8147rem);
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+	--space-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
+	--space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vi, 0.625rem);
+	--space-xs: clamp(0.875rem, 0.8533rem + 0.1087vi, 0.9375rem);
+	--space-s: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+	--space-m: clamp(1.6875rem, 1.6223rem + 0.3261vi, 1.875rem);
+	--space-l: clamp(2.25rem, 2.163rem + 0.4348vi, 2.5rem);
+	--space-xl: clamp(3.375rem, 3.2446rem + 0.6522vi, 3.75rem);
+	--space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vi, 5rem);
+	--space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vi, 7.5rem);
+
+	/* One-up pairs */
+	--space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vi, 0.625rem);
+	--space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vi, 0.9375rem);
+	--space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vi, 1.25rem);
+	--space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vi, 1.875rem);
+	--space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vi, 2.5rem);
+	--space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vi, 3.75rem);
+	--space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vi, 5rem);
+	--space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vi, 7.5rem);
+
+	/* Custom pairs */
+	--space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vi, 2.5rem);
 }
 
 
@@ -49,9 +78,11 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
+
 html {
 	overflow-y: scroll;
 }
+
 body {
 	max-width: 40em;
 }
@@ -70,6 +101,7 @@ body {
 p:last-child {
 	margin-bottom: 0;
 }
+
 p {
 	line-height: 1.5;
 }
@@ -81,9 +113,11 @@ li {
 a[href] {
 	color: var(--text-color-link);
 }
+
 a[href]:visited {
 	color: var(--text-color-link-visited);
 }
+
 a[href]:hover,
 a[href]:active {
 	color: var(--text-color-link-active);
@@ -92,13 +126,13 @@ a[href]:active {
 main {
 	padding: 1rem;
 }
+
 main :first-child {
 	margin-top: 0;
 }
 
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
+
+
 header:after {
 	content: "";
 	display: table;
@@ -114,6 +148,7 @@ header:after {
 table {
 	margin: 1em 0;
 }
+
 table td,
 table th {
 	padding-right: 1em;
@@ -123,9 +158,11 @@ pre,
 code {
 	font-family: var(--font-family-monospace);
 }
+
 pre:not([class*="language-"]) {
 	margin: .5em 0;
-	line-height: 1.375; /* 22px /16 */
+	line-height: 1.375;
+	/* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
 	-o-tab-size: var(--syntax-tab-size);
 	tab-size: var(--syntax-tab-size);
@@ -138,6 +175,7 @@ pre:not([class*="language-"]) {
 	word-spacing: normal;
 	word-break: normal;
 }
+
 code {
 	word-break: break-all;
 }
@@ -150,29 +188,39 @@ header {
 	align-items: center;
 	padding: 1em;
 }
+
 .home-link {
-	font-size: 1em; /* 16px /16 */
+	font-size: var(--step-5);
+	/* 16px /16 */
 	font-weight: 700;
 	margin-right: 2em;
 }
+
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
 
 /* Nav */
+nav {
+	margin-left: auto;
+}
+
 .nav {
 	display: flex;
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
+
 .nav-item {
 	display: inline-block;
 	margin-right: 1em;
 }
+
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
+
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
 }
@@ -183,6 +231,7 @@ header {
 	padding: 0;
 	padding-left: 1.5rem;
 }
+
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
@@ -190,6 +239,7 @@ header {
 	counter-increment: start-from -1;
 	margin-bottom: 1em;
 }
+
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
@@ -198,16 +248,21 @@ header {
 	text-align: right;
 	margin-left: -1.5rem;
 }
+
 .postlist-date,
 .postlist-item:before {
-	font-size: 0.8125em; /* 13px /16 */
+	font-size: 0.8125em;
+	/* 13px /16 */
 	color: var(--color-gray-90);
 }
+
 .postlist-date {
 	word-spacing: -0.5px;
 }
+
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: 1.1875em;
+	/* 19px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;
@@ -216,6 +271,7 @@ header {
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
 }
+
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
@@ -228,7 +284,8 @@ header {
 	text-transform: capitalize;
 	font-style: italic;
 }
-.postlist-item > .post-tag {
+
+.postlist-item>.post-tag {
 	align-self: center;
 }
 
@@ -241,6 +298,7 @@ header {
 	padding: 0;
 	margin: 0;
 }
+
 .post-metadata time {
 	margin-right: 1em;
 }
@@ -252,19 +310,38 @@ header {
 	font-size: 1em;
 	margin-left: .1em;
 }
+
 a[href].header-anchor,
 a[href].header-anchor:visited {
 	color: transparent;
 }
+
 a[href].header-anchor:focus,
 a[href].header-anchor:hover {
 	text-decoration: underline;
 }
+
 a[href].header-anchor:focus,
-:hover > a[href].header-anchor {
+:hover>a[href].header-anchor {
 	color: #aaa;
 }
 
-h2 + .header-anchor {
+h2+.header-anchor {
 	font-size: 1.5em;
+}
+
+.measure-cap {
+	max-inline-size: 60ch;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+figcaption {
+	max-inline-size: 60ch;
 }
